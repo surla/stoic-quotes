@@ -3,7 +3,8 @@ const app = express();
 
 const PORT = process.env.PORT || 4001;
 
-const data = require("./data.js");
+const { quotes } = require("./data.js");
+const { getRandomElement } = require("./utils");
 
 app.use(express.static("public"));
 
@@ -12,9 +13,14 @@ app.get("/", (req, res, next) => {
 });
 
 app.get("/api/quotes", (req, res, next) => {
-  res.send(data);
+  res.send({ quotes });
+});
+
+app.get("/api/quotes/random", (req, res, next) => {
+  const randomQuote = getRandomElement(quotes);
+  res.send(randomQuote);
 });
 
 app.listen(PORT, () => {
-  console.log(`Listening on PORT: ${PORT}`);
+  console.log(`Listening at http://localhost:${PORT}`);
 });

@@ -1,5 +1,7 @@
-const allButton = document.getElementById("all-quotes");
-const randomButton = document.getElementById("random-quote");
+const { response } = require("express");
+
+const fetchAllButton = document.getElementById("all-quotes");
+const fetchRandomButton = document.getElementById("random-quote");
 const searchNameButton = document.getElementById("search-name");
 
 const quoteContainer = document.getElementById("quote-container");
@@ -20,8 +22,22 @@ const renderQuotes = (quotes = []) => {
   }
 };
 
-allButton.addEventListener("click", () => {
+fetchAllButton.addEventListener("click", () => {
   fetch("/api/quotes")
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.log("Request Error.");
+      }
+    })
+    .then((response) => {
+      renderQuotes(response.quotes);
+    });
+});
+
+fetchRandomButton.addEventListener("click", () => {
+  fetch("/api/quotes/random")
     .then((response) => {
       if (response.ok) {
         return response.json();
