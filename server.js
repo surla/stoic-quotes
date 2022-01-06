@@ -18,7 +18,7 @@ app.get("/api/quotes", (req, res, next) => {
 
 app.get("/api/quotes/random", (req, res, next) => {
   const randomQuote = getRandomElement(quotes);
-  res.send(randomQuote);
+  res.send({ randomQuote });
 });
 
 app.listen(PORT, () => {
