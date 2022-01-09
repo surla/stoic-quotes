@@ -13,7 +13,18 @@ app.get("/", (req, res, next) => {
 });
 
 app.get("/api/quotes", (req, res) => {
-  res.send({ quotes });
+  if (req.query.person !== undefined) {
+    const quotesByPerson = quotes.filter(
+      (quote) => quote.person === req.query.person
+    );
+    res.send({
+      quotes: quotesByPerson,
+    });
+  } else {
+    res.send({
+      quotes: quotes,
+    });
+  }
 });
 
 app.get("/api/quotes/random", (req, res, next) => {

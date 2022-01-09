@@ -1,6 +1,6 @@
 const fetchAllButton = document.getElementById("all-quotes");
 const fetchRandomButton = document.getElementById("random-quote");
-const searchNameButton = document.getElementById("search-name");
+const fetchPersonButton = document.getElementById("search-name");
 
 const quoteContainer = document.getElementById("quote-container");
 
@@ -52,5 +52,21 @@ fetchRandomButton.addEventListener("click", () => {
     })
     .then((response) => {
       renderQuotes([response.randomQuote]);
+    });
+});
+
+fetchPersonButton.addEventListener("click", () => {
+  resetQuotes();
+  const person = document.getElementById("person").value;
+  fetch(`/api/quotes?person=${person}`)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.log(`Request Error.`);
+      }
+    })
+    .then((response) => {
+      renderQuotes(response.quotes);
     });
 });
