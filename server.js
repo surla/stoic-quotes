@@ -12,13 +12,27 @@ app.get("/", (req, res, next) => {
   res.send();
 });
 
-app.get("/api/quotes", (req, res, next) => {
+app.get("/api/quotes", (req, res) => {
   res.send({ quotes });
 });
 
 app.get("/api/quotes/random", (req, res, next) => {
   const randomQuote = getRandomElement(quotes);
   res.send({ randomQuote });
+});
+
+app.post("/api/quotes", (req, res) => {
+  const newQuote = {
+    quote: req.query.quote,
+    person: req.query.person,
+  };
+  if (newQuote.quote && newQuote.person) {
+    quotes.push(newQuote);
+    res.send({ quote: newQuote });
+  } else {
+    res.status(400).send();
+  }
+  res.send("POST Request to Add-quote");
 });
 
 app.listen(PORT, () => {
