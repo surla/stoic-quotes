@@ -6,6 +6,9 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: salmon;
+  color: #444;
 }
 
 ol,
@@ -13,10 +16,46 @@ ul {
   list-style: none;
 }
 
+a {
+  padding: 0.7em;
+  text-decoration: none;
+
+  border-radius: 5px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
 .container {
   margin: 0 auto;
-  display: flex;
   flex-direction: column;
+
   align-items: center;
   width: min(90%, 1000px);
+}
+
+.flex {
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.btn {
+  background-color: #007396;
+  color: #fff;
+  padding: 0.5em;
+  border: none;
+  border-radius: 0.3em;
+}
+
+.btn-quote {
+  margin-inline: auto;
+  background-color: black;
+}
+
+.border {
+  border: 5px solid green;
 }
