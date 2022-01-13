@@ -14,8 +14,8 @@ const renderQuotes = (quotes = []) => {
       const newQuote = document.createElement("div");
       newQuote.className = "single-quote";
       newQuote.innerHTML = `
-				<div>${quote.quote}</div>
-				<div>${quote.person}</div>
+				<div class="quote-text">${quote.quote}</div>
+				<div class="attribution">- ${quote.person}</div>
 			`;
       quoteContainer.appendChild(newQuote);
     });

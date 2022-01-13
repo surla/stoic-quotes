@@ -25,6 +25,16 @@ a {
   text-transform: uppercase;
 }
 
+button:hover {
+  background-color: #006a8a4f;
+  transition: background-color 0.2s;
+}
+
+input {
+  width: 100%;
+  padding: 6px 10px;
+}
+
 .container {
   margin: 0 auto;
   flex-direction: column;
@@ -43,19 +53,35 @@ a {
   font-size: 3rem;
 }
 
+.search {
+  width: 100%;
+}
+
 .btn {
   background-color: #007396;
   color: #fff;
-  padding: 0.5em;
+  padding: 0.5em 0.7em;
   border: none;
   border-radius: 0.3em;
 }
 
-.btn-quote {
-  margin-inline: auto;
-  background-color: black;
+.btn-search {
+  width: 25%;
 }
 
-.border {
-  border: 5px solid green;
+#quote-container {
+  margin-top: 1em;
+}
+
+.single-quote {
+  padding: 10px;
+}
+
+.quote-text {
+  font-style: italic;
+  line-height: 1.5em;
+}
+
+.attribution {
+  margin-top: 0.5em;
 }

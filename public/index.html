@@ -12,7 +12,7 @@
     />
   </head>
   <body>
-    <div class="container flex border">
+    <div class="container flex">
       <header>
         <h1 class="title">Stoic Quotes API</h1>
         <nav>
@@ -22,14 +22,16 @@
           </ul>
         </nav>
       </header>
-      <main>
+      <main class="container flex">
         <div class="btn-quote">
           <button class="btn" id="random-quote">Random Quote</button>
           <button class="btn" id="all-quotes">All Quotes</button>
         </div>
-        <div>
+        <div class="search flex">
           <input id="person" type="text" />
-          <button class="btn" id="search-name">Search by Stoic Name</button>
+          <button class="btn btn-search" id="search-name">
+            Search by Name
+          </button>
         </div>
         <div id="quote-container"></div>
       </main>
