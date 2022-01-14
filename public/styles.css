@@ -85,3 +85,15 @@ input {
 .attribution {
   margin-top: 0.5em;
 }
+
+.new-quote-title {
+  font-size: 1.5em;
+}
+
+.inputs div {
+  margin-top: 1em;
+}
+
+.btn-submit {
+  margin-top: 0.5em;
+}

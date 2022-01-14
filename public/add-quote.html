@@ -8,28 +8,37 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <h1>Stoic Quotes API</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="add-quote.html">Add a new quote</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <h2>Add a New Quote</h2>
-      <div class="inputs">
-        <label for="quote">Quote text:</label>
-        <input id="quote" value="" />
-        <label for="person">Person:</label>
-        <input id="person" value="" />
-      </div>
-      <div>
-        <button id="submit-quote">Submit Your Quote</button>
-      </div>
-      <div id="new-quote"></div>
-    </main>
+    <div class="container flex">
+      <header>
+        <h1 class="title">Stoic Quotes API</h1>
+        <nav>
+          <ul class="flex">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="add-quote.html">Add a new quote</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main class="container">
+        <h2 class="new-quote-title">Add a New Quote</h2>
+        <div class="inputs">
+          <div>
+            <label for="quote">Quote text:</label>
+            <input id="quote" value="" />
+          </div>
+          <div>
+            <label for="person">Person:</label>
+            <input id="person" value="" />
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-submit" id="submit-quote">
+            Submit Your Quote
+          </button>
+        </div>
+        <div id="new-quote"></div>
+      </main>
+    </div>
+
     <script src="add-quote.js"></script>
   </body>
 </html>
